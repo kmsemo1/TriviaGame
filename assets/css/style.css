@@ -6,9 +6,21 @@ body {
     color: white;
     text-shadow: 2px 2px 4px #000000;
     text-align: center;
-    margin: 0 200px;
+    margin: 0 100px;
 }
 
-#textBox {
+#textBox, h1 {
     background-color: #aa730cce
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 100px;
 }

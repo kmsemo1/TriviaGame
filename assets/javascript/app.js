@@ -65,8 +65,9 @@ $("#btn").on("click", function () {
       }
     }
    }                   
-      alert("Correct Responses: " + amountCorrect);
-    }
+      $("#textBox").html("<h3>Correct Responses: " + amountCorrect +"</h3>");
+    })
+});
 
 
     // keep track of amount correct
