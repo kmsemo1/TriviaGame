@@ -13,7 +13,7 @@ $("#startBtn").on("click", function() {
 
     // ==========Timer===========
     // variable for timer in seconds
-    var time = 30;
+    var time = 3;
     // variable as place holder for interval function
     var interval;
 
@@ -31,8 +31,28 @@ $("#startBtn").on("click", function() {
         $("#display").html("<h1>" + time + " seconds</h1>");
     }
 
+    // create stop function
+    function stop() {
+        // clear intervals
+        clearInterval(interval);
+    }
+
+    // call out run function
     run();
 
+    if (time === 0) {
+        var amountCorrect = 0;          
+        for(var i = 1; i <= 10; i++) {
+          var radios = document.getElementsByName('group'+i);
+          for(var j = 0; j < radios.length; j++) {
+            var radio = radios[j];
+            if(radio.value == "correct" && radio.checked) {
+              amountCorrect++;
+            }
+          }
+         }                   
+            $("#textBox").html("<h3>Times Up! <br> Correct Responses: " + amountCorrect +"</h3>");
+    }
 })
 
 
@@ -94,6 +114,7 @@ answer: "Thor"
     choices: ["San Diego Padres", "Atlanta Braves", "Oakland Athletics", "Cleveland Indians"],
     answer: "San Diego Padres"
 }];
+
 
 
 $(document).ready(function() {
