@@ -1,45 +1,79 @@
 // create object for the questions and answers
 
-// var questions = {
-//     q1: 'He was called "The King of Pop"', 
-//     q2: 'Chris Hemsworth plays this superhero',
-//     q3: 'This movie was top at the box office in 2015',
-//     q4: 'This remake of a 1984 movie stars a female cast including Melissa McCarthy and Kristen Wiig',
-//     q5: 'They won the 2016 Superbowl',
-//     q6: 'This artist is responsible for the hit "One Dance"',
-//     q7: "This TV series featuring the Tanner Family which was originally created in the 1980's made its way back to TV this past year with a new name",
-//     q8: "He is Batman's sidekick",
-//     q9: "This hit HBO show was based on the books written by George R.R. Martin",
-//     q10: "The New York Yankees beat this team to win the 1998 World Series"
-// };
+var qa1 = [{
+    q: 'He was called "The King of Pop"', 
+    choices: ["Michael Jackson", "Prince", "Justin Bieber", "Justin Timberlake"],
+    a: "Michael Jackson"},
+    {
+        q: 'Chris Hemsworth plays this superhero',
+choices: ["Batman", "Captain America", "Thor", "Iron Man"],
+a: "Thor"
+},
+{
+    q: 'This movie was top at the box office in 2015',
+    choices: ["Mad Max: Fury Road", "The Revenant", "Star Wars Ep. VII: The Force Awakens", "Jurassic World"],
+    a: "Star Wars Ep. VII: The Force Awakens"
+},
+{
+    q: 'This remake of a 1984 movie stars a female cast including Melissa McCarthy and Kristen Wiig',
+    choices: ["The Fog", "Ghostbusters", "Prom Night", "It"],
+    a: "Ghostbusters"
+},
+{
+    q: 'They won the 2016 Superbowl',
+    choices: ["New England Patriots", "Pittsburgh Steelers", "Baltimore Ravens", "Denver Broncos"],
+    a: "Denver Broncos"
+},
+{
+    q: 'This artist is responsible for the hit "One Dance"',
+    choices: ["Drake", "Rhianna", "Calvin Harris", "One Direction"],
+    a: "Drake"
+},
+{
+    q: "This TV series featuring the Tanner Family which was originally created in the 1980's made its way back to TV this past year with a new name",
+    choices: ["Fresh Prince of Bel Air", "Family Matters", "Step By Step", "Full House"],
+    a: "Full House"
+},
+{
+    q: "He is Batman's sidekick",
+    choices: ["Alfred", "The Joker", "Catwoman", "Robin"],
+    a: "Robin"
+},
+{
+    q: "This hit HBO show was based on the books written by George R.R. Martin",
+    choices: ["The Wire", "The Sopranos", "Game of Thrones", "Oz"],
+    a: "Game of Thrones"
+},
+{
+    q: "The New York Yankees beat this team to win the 1998 World Series",
+    choices: ["San Diego Padres", "Atlanta Braves", "Oakland Athletics", "Cleveland Indians"],
+    a: "San Diego Padres"
+}];
 
-// var anwsers= {
-//     a1: 'michaelJackson',
-//     a2: 'thor',
-//     a3: 'starWars',
-//     a4: 'ghostbusters',
-//     a5: 'broncos',
-//     a6: 'drake',
-//     a7: 'full House',
-//     a8: 'robin',
-//     a9: 'got',
-//     a10: 'padres'
-// };
 
+var choice = $("")
 //console.log(questions, answers);
 
 $(document).ready(function() {
 // when the user clicks submit
 $("#btn").on("click", function () {
+    var chosen = "";
+    if (document.textBox.group1[0].checked){
+        chosen = document.quiz.question1[0].value;
+    }
+    else if (document.quiz.question1[1].checked){
+        chosen =  document.quiz.question1[1].value;
+    }
+    else{
+        chosen = document.quiz.question1[2].value;
+    }
+}
+
+
     // keep track of amount correct
-    var score = 0;
+
     // create function that checks answer matches correct question
-    if ($(".questions:checked") === val(correct) {
-      score = score+1;
-      alert("YO");
-    })
-})
-});
+  
 
      
     
@@ -49,12 +83,3 @@ $("#btn").on("click", function () {
 // take total correct divided by the total 10
 // display message with percentage correct
 // if user recieves 100% alert 
-
-
-// if (score === 10) {
-//     $("#textBox").html("<h1> 100% <br> Perfect Score!You know your Pop Culture! </h1>");
-// }   else {
-//     $("#textBox").html("<h1>Final Score:<br>" + score + "0% </h1>")
-// }
-// });
-// })
