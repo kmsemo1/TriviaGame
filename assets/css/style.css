@@ -9,8 +9,12 @@ body {
     margin: 0 100px;
 }
 
-#textBox, h1 {
+#textBox, #start, h1 {
     background-color: #aa730cce
+}
+
+#start {
+    padding: 20px 0px;
 }
 
 h1 {

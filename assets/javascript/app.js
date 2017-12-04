@@ -1,3 +1,9 @@
+// hide text body
+$("#textBox").hide();
+// click on start button
+// hide start page
+// show text body
+
 // create object for the questions and answers
 
 var questions = [{
