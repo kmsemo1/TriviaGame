@@ -1,8 +1,25 @@
-// hide text body
-$("#textBox").hide();
-// click on start button
-// hide start page
-// show text body
+// hide text body at begining of load page
+$(document).ready(function() {
+    function hideTextBox() {
+        $("#textBox").hide();
+} 
+hideTextBox()
+// hide text box when start button is clicked
+$("#startBtn").on("click", function() {
+    // show text body
+    $("#textBox").show();
+    // hide start page
+    $("#start").hide();
+})
+
+// begin timer
+// 
+
+});
+
+
+
+
 
 // create object for the questions and answers
 
