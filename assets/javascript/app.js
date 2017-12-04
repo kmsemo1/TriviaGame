@@ -10,10 +10,32 @@ $("#startBtn").on("click", function() {
     $("#textBox").show();
     // hide start page
     $("#start").hide();
+
+    // ==========Timer===========
+    // variable for timer in seconds
+    var time = 30;
+    // variable as place holder for interval function
+    var interval;
+
+    // create run function to set interval
+    function run() {
+        //interval runs a 1/100 sec interval using decrease function
+        interval = setInterval(decrease, 1000);
+    }
+ 
+    // create decrease function
+    function decrease() {
+        //counts down the time
+        time--;
+        // show count down in display
+        $("#display").html("<h1>" + time + " seconds</h1>");
+    }
+
+    run();
+
 })
 
-// begin timer
-// 
+
 
 });
 
