@@ -1,0 +1,14 @@
+body {
+    background-image: url("https://s-media-cache-ak0.pinimg.com/originals/87/8b/d5/878bd5baee9c46e1fd47097650f4f6a0.jpg");
+    background-size: 100%;
+    background-position-y: 0;
+    font-family: 'Permanent Marker', cursive;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    margin: 0 200px;
+}
+
+#textBox {
+    background-color: #aa730cce
+}
