@@ -48,6 +48,11 @@ $(document).ready(function () {
                 }
                 $("#textBox").html("<h3>Times Up! <br> Correct Responses: " + amountCorrect + "</h3>");
             }
+            // stop timer when submit btn is clicked
+            $("#submitBtn").on("click", function () {
+                //stop timer
+                stop();  
+            })
         }
 
         // create stop function
@@ -125,26 +130,28 @@ var questions = [{
 
 $(document).ready(function () {
     // when the user clicks submit
-    $("#submitBtn").on("click", function () {
-        //variable for correct answers
-        var amountCorrect = 0;
-        // every question in the quiz      
-        for (var i = 1; i <= 10; i++) {
-            // create variable for radio group#
-            var radios = document.getElementsByName('group' + i);
-            // every radio within the quiz
-            for (var j = 0; j < radios.length; j++) {
-                // create variable for each radio within the question
-                var radio = radios[j];
-                // check radio if correct and is checked by user
-                if (radio.value == "correct" && radio.checked) {
-                    // add 1 for any correct checked answer
-                    amountCorrect++;
-                }
+$("#submitBtn").on("click", function () {
+    //stop timer
+    stop();
+    //variable for correct answers
+    var amountCorrect = 0;
+    // every question in the quiz      
+    for (var i = 1; i <= 10; i++) {
+        // create variable for radio group#
+        var radios = document.getElementsByName('group' + i);
+        // every radio within the quiz
+        for (var j = 0; j < radios.length; j++) {
+            // create variable for each radio within the question
+            var radio = radios[j];
+            // check radio if correct and is checked by user
+            if (radio.value == "correct" && radio.checked) {
+                // add 1 for any correct checked answer
+                amountCorrect++;
             }
         }
-        $("#textBox").html("<h3>Correct Responses: " + amountCorrect + "</h3>");
-    })
+    }
+    $("#textBox").html("<h3>Correct Responses: " + amountCorrect + "</h3>");
+})
 });
 
 
