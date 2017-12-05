@@ -46,7 +46,7 @@ $(document).ready(function () {
                         }
                     }
                 }
-                $("#textBox").html("<h3><p>Times Up!</p> <br> Correct Responses: " + amountCorrect + "</h3>");
+                $("#textBox").html("<h3><p>Times Up!</p> Correct Responses: " + amountCorrect + "</h3>");
             }
             // stop timer when submit btn is clicked
             $("#submitBtn").on("click", function () {
