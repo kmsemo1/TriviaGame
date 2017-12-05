@@ -1,59 +1,66 @@
 // hide text body at begining of load page
-$(document).ready(function() {
+$(document).ready(function () {
     function hideTextBox() {
         $("#textBox").hide();
-} 
-hideTextBox()
-// hide text box when start button is clicked
-$("#startBtn").on("click", function() {
-    // show text body
-    $("#textBox").show();
-    // hide start page
-    $("#start").hide();
-
-    // ==========Timer===========
-    // variable for timer in seconds
-    var time = 3;
-    // variable as place holder for interval function
-    var interval;
-
-    // create run function to set interval
-    function run() {
-        //interval runs a 1/100 sec interval using decrease function
-        interval = setInterval(decrease, 1000);
     }
- 
-    // create decrease function
-    function decrease() {
-        //counts down the time
-        time--;
-        // show count down in display
-        $("#display").html("<h1>" + time + " seconds</h1>");
-    }
+    hideTextBox()
+    // hide text box when start button is clicked
+    $("#startBtn").on("click", function () {
+        // show text body
+        $("#textBox").show();
+        // hide start page
+        $("#start").hide();
 
-    // create stop function
-    function stop() {
-        // clear intervals
-        clearInterval(interval);
-    }
+        // ==========Timer===========
+        // variable for timer in seconds
+        var time = 30;
+        // variable as place holder for interval function
+        var interval;
 
-    // call out run function
-    run();
+        // variable for amount correct
+        var amountCorrect;
 
-    if (time === 0) {
-        var amountCorrect = 0;          
-        for(var i = 1; i <= 10; i++) {
-          var radios = document.getElementsByName('group'+i);
-          for(var j = 0; j < radios.length; j++) {
-            var radio = radios[j];
-            if(radio.value == "correct" && radio.checked) {
-              amountCorrect++;
+        // create run function to set interval
+        function run() {
+            //interval runs a 1/100 sec interval using decrease function
+            interval = setInterval(decrease, 1000);
+        }
+
+        // create decrease function
+        function decrease() {
+            //counts down the time
+            time--;
+            // show count down in display
+            $("#display").html("<h1>" + time + " seconds</h1>");
+
+            if (time === 0) {
+                stop();
+                // show current score when time expires
+                var amountCorrect = 0;
+                for (var i = 1; i <= 10; i++) {
+                    var radios = document.getElementsByName('group' + i);
+                    for (var j = 0; j < radios.length; j++) {
+                        var radio = radios[j];
+                        if (radio.value == "correct" && radio.checked) {
+                            amountCorrect++;
+                        }
+                    }
+                }
+                $("#textBox").html("<h3>Times Up! <br> Correct Responses: " + amountCorrect + "</h3>");
             }
-          }
-         }                   
-            $("#textBox").html("<h3>Times Up! <br> Correct Responses: " + amountCorrect +"</h3>");
-    }
-})
+        }
+
+        // create stop function
+        function stop() {
+            // clear intervals
+            clearInterval(interval);
+        }
+
+        // call out run function
+        run();
+
+
+    })
 
 
 
@@ -61,18 +68,17 @@ $("#startBtn").on("click", function() {
 
 
 
-
-
 // create object for the questions and answers
 
 var questions = [{
-    q: 'He was called "The King of Pop"', 
+    q: 'He was called "The King of Pop"',
     choices: ["Michael Jackson", "Prince", "Justin Bieber", "Justin Timberlake"],
-    answer: "Michael Jackson"},
-    {
-        q: 'Chris Hemsworth plays this superhero',
-choices: ["Batman", "Captain America", "Thor", "Iron Man"],
-answer: "Thor"
+    answer: "Michael Jackson"
+},
+{
+    q: 'Chris Hemsworth plays this superhero',
+    choices: ["Batman", "Captain America", "Thor", "Iron Man"],
+    answer: "Thor"
 },
 {
     q: 'This movie was top at the box office in 2015',
@@ -117,32 +123,38 @@ answer: "Thor"
 
 
 
-$(document).ready(function() {
-// when the user clicks submit
-$("#btn").on("click", function () {
-    //variable for correct answers
-  var amountCorrect = 0;          
-  for(var i = 1; i <= 10; i++) {
-    var radios = document.getElementsByName('group'+i);
-    for(var j = 0; j < radios.length; j++) {
-      var radio = radios[j];
-      if(radio.value == "correct" && radio.checked) {
-        amountCorrect++;
-      }
-    }
-   }                   
-      $("#textBox").html("<h3>Correct Responses: " + amountCorrect +"</h3>");
+$(document).ready(function () {
+    // when the user clicks submit
+    $("#btn").on("click", function () {
+        //variable for correct answers
+        var amountCorrect = 0;
+        // every question in the quiz      
+        for (var i = 1; i <= 10; i++) {
+            // create variable for radio group#
+            var radios = document.getElementsByName('group' + i);
+            // every radio within the quiz
+            for (var j = 0; j < radios.length; j++) {
+                // create variable for each radio within the question
+                var radio = radios[j];
+                // check radio if correct and is checked by user
+                if (radio.value == "correct" && radio.checked) {
+                    // add 1 for any correct checked answer
+                    amountCorrect++;
+                }
+            }
+        }
+        $("#textBox").html("<h3>Correct Responses: " + amountCorrect + "</h3>");
     })
 });
 
 
-    // keep track of amount correct
+
 
     // create function that checks answer matches correct question
-  
 
-     
-    
+
+
+
 
 
 
