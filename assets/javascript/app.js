@@ -125,7 +125,7 @@ var questions = [{
 
 $(document).ready(function () {
     // when the user clicks submit
-    $("#btn").on("click", function () {
+    $("#submitBtn").on("click", function () {
         //variable for correct answers
         var amountCorrect = 0;
         // every question in the quiz      
